@@ -1,16 +1,29 @@
 # Project 4: Around The U.S.
 
+---
 ### Overview
+* Intro
+* Technologies Used
+* Future Updates
 
-* Figma
-* Images
+---
 
-**Figma**
+**Intro**
 
-* [Link to the project in Figma](https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+This is a interactive single page project where users can add, remove, or like photos. This project has been set up using ***Flexbox*** and ***CSS Grid*** for layout and follows ***responsive design*** prinicples, so that it can be displayed correctly on most popular screen sizes. It has been set up using a nested ***BEM (Block, Element, Modifier) file structure, HTML*** ***CSS*** and ***Javascript***.
 
-**Images**
+**Technologies Used**
+- HTML
+- CSS
+- Javascript
+- Flexbox
+- Grid
+- Figma
+- Git
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
+**Future Updates**
 
-Have fun with JavaScript!
+- [ ] Add different fonts
+- [ ] Checking the code for cross-compatibility and adding all the necessary vendor prefixes
+- [ ] Designing a form that allows users to submit a comment
+- [ ] Adding further animations/transitions to images and links
