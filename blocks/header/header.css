@@ -2,6 +2,15 @@
 
 .header{
     max-width: 880px;
+    width: calc(100% - 400px);
     margin: 0 auto 40px;
     padding: 45px 0 0;
+}
+
+@media screen and (max-width: 320px){
+    .header{
+        width: 100%;
+        margin: 0 auto 42px;
+        padding: 28px 0 0;
+    }
 }

@@ -5,5 +5,7 @@
 @import url(./__like/elements__like.css);
 
 .elements{
-    
+    max-width: 880px;
+    width: calc(100% - 400px);
+    margin: 0 auto 67px;
 }
