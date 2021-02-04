@@ -17,8 +17,10 @@
             <section class="profile">
                 <img src="./images/profile.png" alt="image of Jacques Cousteau" class="profile__avatar">
                 <div class="profile__info">
-                    <h1 class="profile__name">Jacques Cousteau</h1>
-                    <button class="profile__edit-btn"></button>
+                    <div class="profile__text-container">
+                        <h1 class="profile__name">Jacques Cousteau</h1>
+                        <button class="profile__edit-btn"></button>
+                    </div>
                     <p class="profile__profession">Explorer</p>
                 </div>
                 <button class="profile__add-btn"></button>
@@ -27,43 +29,67 @@
             <section class="elements">
                 <ul class="elements__container">
                     <li class="elements__item">
-                        <img src="" alt="" class="elements__image">
-                        <h2 class="elements__title">Yosemite Valley</h2>
-                        <img src="" alt="" class="elements__like">
+                        <img src="./images/yosemite.png" alt="Yosemite Valley" class="elements__image">
+                        <div class="elements__info-container">
+                            <h2 class="elements__title">Yosemite Valley</h2>
+                            <img src="./images/heart_disabled.svg" alt="heart icon" class="elements__like">
+                        </div>
                     </li>
                     <li class="elements__item">
-                        <img src="" alt="" class="elements__image">
-                        <h2 class="elements__title">Lake Louise</h2>
-                        <img src="" alt="" class="elements__like">
+                        <img src="./images/lakelouise.png" alt="Lake Louise" class="elements__image">
+                        <div class="elements__info-container">
+                            <h2 class="elements__title">Lake Louise</h2>
+                            <img src="./images/heart_disabled.svg" alt="heart icon" class="elements__like">   
+                        </div>
                     </li>
                     <li class="elements__item">
-                        <img src="" alt="" class="elements__image">
-                        <h2 class="elements__title">Bald Mountains</h2>
-                        <img src="" alt="" class="elements__like">
+                        <img src="./images/baldmountains.png" alt="Bald Mountains" class="elements__image">
+                        <div class="elements__info-container">
+                            <h2 class="elements__title">Bald Mountains</h2>
+                            <img src="./images/heart_disabled.svg" alt="heart icon" class="elements__like">
+                        </div>
                     </li>
                     <li class="elements__item">
-                        <img src="" alt="" class="elements__image">
-                        <h2 class="elements__title">Latemar</h2>
-                        <img src="" alt="" class="elements__like">
+                        <img src="./images/latermar.png" alt="Latemar" class="elements__image">
+                        <div class="elements__info-container">
+                            <h2 class="elements__title">Latemar</h2>
+                            <img src="./images/heart_disabled.svg" alt="heart icon" class="elements__like">
+                        </div>
                     </li>
                     <li class="elements__item">
-                        <img src="" alt="" class="elements__image">
-                        <h2 class="elements__title">Vanoise National Park</h2>
-                        <img src="" alt="" class="elements__like">
+                        <img src="./images/vanoise.png" alt="Vanoise National Park" class="elements__image">
+                        <div class="elements__info-container">
+                            <h2 class="elements__title">Vanoise National Park</h2>
+                            <img src="./images/heart_disabled.svg" alt="heart icon" class="elements__like">
+                        </div>
                     </li>
                     <li class="elements__item">
-                        <img src="" alt="" class="elements__image">
-                        <h2 class="elements__title">Lago di Braies</h2>
-                        <img src="" alt="" class="elements__like">
+                        <img src="./images/lago.png" alt="Lago di Braines" class="elements__image">
+                        <div class="elements__info-container">
+                            <h2 class="elements__title">Lago di Braies</h2>
+                            <img src="./images/heart_disabled.svg" alt="heart icon" class="elements__like">   
+                        </div>
                     </li>
                 </ul>
             </section>
         </main>
 
+        <div class="popup">
+            <div class="popup__container">
+                <button class="popup__button"></button>
+                <form action="" class="form">
+                    <h2 class="form__title">Edit profile</h2>
+                    <input type="text" class="form__input">
+                    <input type="text" class="form__input">
+                    <button class="form__button">Save</button>
+                </form>
+            </div>
+        </div>
+
         <footer class="footer">
             <p class="footer__copyright">© 2020 Around The U.S.</p>
         </footer>
     </div>
-    <script src=""></script>
+    <script src="index.js"></script>
 </body>
 </html>
