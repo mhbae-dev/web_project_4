@@ -1,0 +1,13 @@
+.elements__like{
+    display: block;
+    background: url(../../../images/heart_disabled.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 21px;
+    padding: 0;
+}
+
+.elements__like:active{
+    
+}
