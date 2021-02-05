@@ -4,10 +4,14 @@
     background-repeat: no-repeat;
     background-position: center;
     border: none;
-    width: 21px;
+    width: 100%;
+    max-width: 21px;
     padding: 0;
 }
 
-.elements__like:active{
-    
+.elements__like:focus{
+    background: url(../../../images/heart_active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: 0;
 }
