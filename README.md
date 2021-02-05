@@ -1,5 +1,7 @@
 # Project 4: Around The U.S.
 
+https://mhbae-dev.github.io/web_project_4/
+
 ---
 ### Overview
 * Intro
@@ -25,5 +27,4 @@ This is a interactive single page project where users can add, remove, or like p
 
 - [ ] Add different fonts
 - [ ] Checking the code for cross-compatibility and adding all the necessary vendor prefixes
-- [ ] Designing a form that allows users to submit a comment
-- [ ] Adding further animations/transitions to images and links
+
