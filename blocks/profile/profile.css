@@ -11,7 +11,6 @@
     justify-content: flex-start;
     align-items: center;
     max-width: 880px;
-    width: calc(100% - 400px);
     margin: 0 auto 50px;
 }
 

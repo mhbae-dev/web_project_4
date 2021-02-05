@@ -4,10 +4,20 @@
     border-radius: 2px;
     color: #FFFFFF;
     width: 100%;
-    max-width: ;
+    max-width: 358px;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    margin: 0 auto 36.5px;
+    padding: 13px 0 18.5px;
+}
+
+@media screen and (max-screen:470px){
+    .popup__submit{
+        font-size: 14px;
+        line-height: 17px;
+        padding-bottom: 25px;
+    }
 }
