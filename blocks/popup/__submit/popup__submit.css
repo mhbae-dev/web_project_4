@@ -14,7 +14,7 @@
     padding: 13px 0 18.5px;
 }
 
-@media screen and (max-screen:470px){
+@media screen and (max-width:470px){
     .popup__submit{
         font-size: 14px;
         line-height: 17px;
