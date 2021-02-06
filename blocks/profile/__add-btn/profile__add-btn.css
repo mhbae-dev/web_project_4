@@ -1,11 +1,13 @@
 .profile__add-btn{
-    width: 150px;
+    max-width: 150px;
+    width: 100%;
     height: 50px;
     border: 2px solid #FFFFFF;
     background-color: transparent;
     background: url(../../../images/addbtn.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 22px 22px;
     box-sizing: border-box;
     border-radius: 2px;
     margin-left: auto;
@@ -13,7 +15,8 @@
 
 @media screen and (max-width: 1110px){
     .profile__add-btn{
+        max-width: 282px;
         margin: 0 auto;
-        width: 100%;
+        background-size: 16px 16px;
     }
 }
