@@ -18,11 +18,11 @@
                 <div class="profile__info">
                     <div class="profile__text-container">
                         <h1 class="profile__name">Jacques Cousteau</h1>
-                        <button class="profile__edit-btn button"></button>
+                        <button type="button" class="profile__edit-btn button"></button>
                     </div>
                     <p class="profile__profession">Explorer</p>
                 </div>
-                <button class="profile__add-btn button"></button>
+                <button type="button" class="profile__add-btn button"></button>
             </section>
 
             <section class="elements">
@@ -31,53 +31,57 @@
                         <img src="./images/yosemite.png" alt="Yosemite Valley" class="elements__image">
                         <div class="elements__info-container">
                             <h2 class="elements__title">Yosemite Valley</h2>
-                            <button class="elements__like button"></button>
+                            <button type="button" class="elements__like button"></button>
                         </div>
                     </li>
                     <li class="elements__item">
                         <img src="./images/lakelouise.png" alt="Lake Louise" class="elements__image">
                         <div class="elements__info-container">
                             <h2 class="elements__title">Lake Louise</h2>
-                            <button class="elements__like button"></button>   
+                            <button type="button" class="elements__like button"></button>   
                         </div>
                     </li>
                     <li class="elements__item">
                         <img src="./images/baldmountains.png" alt="Bald Mountains" class="elements__image">
                         <div class="elements__info-container">
                             <h2 class="elements__title">Bald Mountains</h2>
-                            <button class="elements__like button"></button>
+                            <button type="button" class="elements__like button"></button>
                         </div>
                     </li>
                     <li class="elements__item">
                         <img src="./images/latermar.png" alt="Latemar" class="elements__image">
                         <div class="elements__info-container">
                             <h2 class="elements__title">Latemar</h2>
-                            <button class="elements__like button"></button>
+                            <button type="button" class="elements__like button"></button>
                         </div>
                     </li>
                     <li class="elements__item">
                         <img src="./images/vanoise.png" alt="Vanoise National Park" class="elements__image">
                         <div class="elements__info-container">
                             <h2 class="elements__title">Vanoise National Park</h2>
-                            <button class="elements__like button"></button>
+                            <button type="button" class="elements__like button"></button>
                         </div>
                     </li>
                     <li class="elements__item">
                         <img src="./images/lago.png" alt="Lago di Braines" class="elements__image">
                         <div class="elements__info-container">
                             <h2 class="elements__title">Lago di Braies</h2>
-                            <button class="elements__like button"></button>   
+                            <button type="button" class="elements__like button"></button>   
                         </div>
                     </li>
                 </ul>
             </section>
         </main>
 
+        <footer class="footer">
+            <p class="footer__copyright">© 2021 Around The U.S.</p>
+        </footer>
+
         <div class="popup">
             <div class="popup__container">
-                <button class="popup__close-btn button"></button>
-                <h2 class="popup__title">Edit profile</h2>
-                <form action="#" class="popup__form">
+                <button type="button" class="popup__close-btn button"></button>
+                <h3 class="popup__title">Edit profile</h3>
+                <form action="#" method="GET" name="profile" class="popup__form">
                     <input type="text" name="name" class="popup__input popup__input_type_name">
                     <input type="text" name="description" class="popup__input popup__input_type_job">
                     <button type="submit" class="popup__submit button">Save</button>
@@ -85,10 +89,7 @@
             </div>
         </div>
 
-        <footer class="footer">
-            <p class="footer__copyright">© 2021 Around The U.S.</p>
-        </footer>
     </div>
-    <script src="./index.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>
