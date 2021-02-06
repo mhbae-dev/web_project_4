@@ -11,19 +11,18 @@ function handleFormSubmit(event){
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    closePopup();
-};
-
-function openPopup(){
-    popup.classList.add("popup_active");
-    nameInput.value = profileName.textContent;
-    jobInput.value = profileJob.textContent;
-};
-
-function closePopup(){
     popup.classList.remove("popup_active");
 };
 
-editButton.addEventListener('click', openPopup);
-closeButton.addEventListener('click', closePopup);
+function togglePopup(){
+    popup.classList.toggle("popup_active");
+
+    if (popup.classList.contains("popup_active")){
+        nameInput.value = profileName.textContent;
+        jobInput.value = profileJob.textContent;
+    }
+};
+
+editButton.addEventListener('click', togglePopup);
+closeButton.addEventListener('click', togglePopup);
 form.addEventListener('submit', handleFormSubmit); 
