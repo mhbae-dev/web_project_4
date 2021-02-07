@@ -7,21 +7,21 @@ let jobInput = form.querySelector(".popup__input_type_job");
 let profileName = document.querySelector(".profile__name");
 let profileJob = document.querySelector(".profile__profession");
 
+
+function togglePopup(){
+    if (!popup.classList.contains("popup_active")){
+        nameInput.value = profileName.textContent;
+        jobInput.value = profileJob.textContent;
+    }
+    popup.classList.toggle("popup_active");
+}
+
 function handleFormSubmit(event){
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    popup.classList.remove("popup_active");
-};
-
-function togglePopup(){
     popup.classList.toggle("popup_active");
-
-    if (popup.classList.contains("popup_active")){
-        nameInput.value = profileName.textContent;
-        jobInput.value = profileJob.textContent;
-    }
-};
+}
 
 editButton.addEventListener('click', togglePopup);
 closeButton.addEventListener('click', togglePopup);

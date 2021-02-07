@@ -1,5 +1,6 @@
 .profile__name{
     font-style: normal;
+    /* The Figma design shows this to be font-weight normal */
     font-weight: normal;
     font-size: 42px;
     line-height: 48px;
