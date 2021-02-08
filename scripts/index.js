@@ -20,7 +20,7 @@ function handleFormSubmit(event){
     event.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    popup.classList.toggle("popup_active");
+    togglePopup();
 }
 
 editButton.addEventListener('click', togglePopup);
