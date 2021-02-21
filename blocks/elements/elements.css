@@ -1,9 +1,11 @@
 @import url(./__container/elements__container.css);
 @import url(./__item/elements__item.css);
+@import url(./__trash/elements__trash.css);
 @import url(./__image/elements__image.css);
 @import url(./__info-container/elements__info-container.css);
 @import url(./__title/elements__title.css);
 @import url(./__like/elements__like.css);
+@import url(./__like/_active/elements__like_active.css);
 
 .elements{
     max-width: 880px;
@@ -15,4 +17,4 @@
         width: calc(100% - 38px);
         margin: 0 auto 50px;
     }
-}
+}  

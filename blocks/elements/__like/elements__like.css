@@ -8,10 +8,3 @@
     max-width: 21px;
     padding: 0;
 }
-
-.elements__like:focus{
-    background: url(../../../images/heart_active.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    outline: 0;
-}

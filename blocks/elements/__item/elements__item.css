@@ -1,5 +1,7 @@
 .elements__item{
     background: #FFFFFF;
+    max-width: 282px;
+    position: relative;
     border-radius: 10px;
     margin: 0;
     padding: 0;

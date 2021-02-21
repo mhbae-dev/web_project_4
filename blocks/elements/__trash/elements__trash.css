@@ -1,0 +1,14 @@
+.elements__trash{
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    background: url(../../../images/Trash.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 100%;
+    max-width: 19px;
+    padding: 0;
+    height: 18px;
+}

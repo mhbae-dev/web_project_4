@@ -1,0 +1,6 @@
+.elements__like_active{
+    background: url(../../../../images/heart_active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: 0;
+}
