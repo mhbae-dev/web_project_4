@@ -1,8 +1,6 @@
 .elements__container{
     width: 100%;
     display: grid;
-    align-content: center;
-    justify-content: center;
     grid-gap: 20px 17px;
     grid-template-columns: repeat(auto-fit, minmax(282px,1fr));
     list-style: none;

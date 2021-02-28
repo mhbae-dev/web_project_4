@@ -1,6 +1,8 @@
 .popup__container_type_image{
     display: flex;
+    justify-content: center;
     background: none;
-    max-height: 75vh;
-    max-width: 75vw;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: fit-content;
 }
