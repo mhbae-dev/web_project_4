@@ -11,9 +11,9 @@ const profileEditButton = document.querySelector(".profile__edit-btn");
 const profileCloseButton  = document.querySelector(".popup__close-edit");
 
 const cardAddButton = document.querySelector(".profile__add-btn")
-const cardCloseButton = document.querySelector(".popup__close-add")
+const cardCloseButton = document.querySelector(".popup__close-btn_type_add")
 
-const imageCloseButton = document.querySelector(".popup__close-image")
+const imageCloseButton = document.querySelector(".popup__close-btn_type_image")
 
 
 //Form Inputs
