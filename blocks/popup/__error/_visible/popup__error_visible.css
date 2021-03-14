@@ -2,4 +2,12 @@
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
+  margin-bottom: 13px;
+}
+
+.popup__error_visible:last-of-type {
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  margin-bottom: 31px;
 }
