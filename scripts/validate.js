@@ -28,7 +28,7 @@ function isValid(input, form, config) {
 //toggle button state if valid
 function buttonState(inputs, button, config) {
   const valid = inputs.every((input) => {
-    input.validity.valid;
+    return input.validity.valid;
   });
   if (valid) {
     button.classList.remove(config.inactiveButtonClass);
