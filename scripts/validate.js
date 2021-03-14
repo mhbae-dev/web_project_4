@@ -28,7 +28,7 @@ function isValid(input, form, config) {
 //toggle button state if valid
 function buttonState(inputs, button, config) {
   const valid = inputs.every((input) => {
-    return input.validity.valid;
+    input.validity.valid;
   });
   if (valid) {
     button.classList.remove(config.inactiveButtonClass);
@@ -49,6 +49,7 @@ function enableValidation(config) {
     });
     const inputs = Array.from(form.querySelectorAll(config.inputSelector));
     const button = form.querySelector(config.submitButtonSelector);
+    buttonState(inputs, button, config);
     inputs.forEach((input) => {
       input.addEventListener("input", () => {
         isValid(input, config);
