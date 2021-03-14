@@ -96,6 +96,7 @@ function addElementPopup() {
   imageNameInput.value = "";
   imageLinkInput.value = "";
   togglePopup(popupAdd);
+  disableButton(popupAdd);
 }
 
 //form submit handler Edit Profile
@@ -104,6 +105,13 @@ function profileFormSubmit(event) {
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   togglePopup(popupEdit);
+}
+
+//disable button
+function disableButton(popup) {
+  const button = popup.querySelector(".popup__button");
+  button.classList.add("popup__button_disabled");
+  button.disabled = true;
 }
 
 //form submit handler Add element item
