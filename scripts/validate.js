@@ -35,7 +35,7 @@ function buttonState(inputs, button, config) {
     button.disabled = false;
   } else {
     button.classList.add(config.inactiveButtonClass);
-    button.disabled = false;
+    button.disabled = true;
   }
 }
 
