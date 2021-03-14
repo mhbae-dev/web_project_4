@@ -9,7 +9,7 @@ function showInputError(input, config) {
 
 //hide error element
 function hideInputError(input, config) {
-  const error = document.querySelector(`#${input.id}-error`);
+  const error = document.querySelector("#" + input.id + "-error");
   error.textContent = "";
 
   error.classList.remove(config.errorClass);
@@ -27,13 +27,15 @@ function isValid(input, form, config) {
 
 //toggle button state if valid
 function buttonState(inputs, button, config) {
-  const valid = inputs.every((input) => input.validity.valid);
+  const valid = inputs.every((input) => {
+    return input.validity.valid;
+  });
   if (valid) {
-    button.disabled = true;
     button.classList.remove(config.inactiveButtonClass);
-  } else {
     button.disabled = false;
+  } else {
     button.classList.add(config.inactiveButtonClass);
+    button.disabled = false;
   }
 }
 
