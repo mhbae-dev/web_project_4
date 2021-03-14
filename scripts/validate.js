@@ -46,14 +46,11 @@ function enableValidation(config) {
       event.preventDefault();
     });
     const inputs = Array.from(form.querySelectorAll(config.inputSelector));
-    const button = Array.from(
-      document.querySelector(config.submitButtonSelector)
-    );
-
+    const button = form.querySelector(config.submitButtonSelector);
     inputs.forEach((input) => {
       input.addEventListener("input", () => {
         isValid(input, config);
-        buttonState(inputs, form, config);
+        buttonState(inputs, button, config);
       });
     });
   });

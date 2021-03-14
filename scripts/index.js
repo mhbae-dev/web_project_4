@@ -75,7 +75,13 @@ function createCard(input) {
 //Handling toggle active popups
 function togglePopup(popup) {
   popup.classList.toggle("popup_active");
-  document.addEventListener("keydown", escapePopup);
+  if (popup.classList.contains("popup_active")) {
+    document.addEventListener("keydown", escapePopup);
+    document.addEventListener("click", closeClick);
+  } else {
+    document.removeEventListener("keydown", escapePopup);
+    document.removeEventListener("click", closeClick);
+  }
 }
 
 //open profile popup
@@ -149,6 +155,3 @@ imageCloseButton.addEventListener("click", () => togglePopup(popupImage));
 //Submit forms
 formSaveProfile.addEventListener("submit", profileFormSubmit);
 formAddElement.addEventListener("submit", addElementSubmit);
-
-//close popup on click
-document.addEventListener("click", closeClick);
