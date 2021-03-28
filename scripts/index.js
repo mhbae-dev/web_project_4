@@ -1,4 +1,5 @@
 //Imports
+import { togglePopup, escapePopup, closeClick } from "./utils.js";
 import FormValidator from "./FormValidator.js";
 import initialCards from "./initialCards.js";
 import Card from "./Card.js";
@@ -48,18 +49,6 @@ const elementsTemplate = document.querySelector(".elements-template").content;
 const elementsContainer = document.querySelector(".elements__container");
 
 //FUNCTIONS
-// //Handling toggle active popups
-function togglePopup(popup) {
-  popup.classList.toggle("popup_active");
-  if (popup.classList.contains("popup_active")) {
-    document.addEventListener("keydown", escapePopup);
-    document.addEventListener("click", closeClick);
-  } else {
-    document.removeEventListener("keydown", escapePopup);
-    document.removeEventListener("click", closeClick);
-  }
-}
-
 //open profile popup
 function profilePopup() {
   nameInput.value = profileName.textContent;
@@ -107,22 +96,6 @@ initialCards.forEach((input) => {
   const card = new Card(input, ".elements-template");
   elementsContainer.prepend(card.generateCard());
 });
-
-//close popup on escape
-function escapePopup(event) {
-  if (event.key === "Escape") {
-    const targetPopup = document.querySelector(".popup_active");
-    togglePopup(targetPopup);
-  }
-}
-
-//close popup on click
-function closeClick(event) {
-  if (event.target.classList.contains("popup_active")) {
-    const targetPopup = document.querySelector(".popup_active");
-    togglePopup(targetPopup);
-  }
-}
 
 //EVENTS
 //Add and close profile
