@@ -1,4 +1,19 @@
+//Imports
+import FormValidator from "./FormValidator.js";
+import initialCards from "./initialCards.js";
+import Card from "./Card.js";
+
 //VARIABLES
+//form settings
+const validationObject = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
 //Popups
 const popupAdd = document.querySelector(".popup_type_add");
 const popupEdit = document.querySelector(".popup_type_edit");
@@ -33,46 +48,7 @@ const elementsTemplate = document.querySelector(".elements-template").content;
 const elementsContainer = document.querySelector(".elements__container");
 
 //FUNCTIONS
-//create Card element
-function createCard(input) {
-  const elementsTemplate = document.querySelector(".elements-template").content;
-  const elementsItem = elementsTemplate
-    .querySelector(".elements__item")
-    .cloneNode(true);
-  const elementsImage = elementsItem.querySelector(".elements__image");
-  const elementsTitle = elementsItem.querySelector(".elements__title");
-  const elementsLikeButton = elementsItem.querySelector(".elements__like");
-  const elementsDeleteButton = elementsItem.querySelector(".elements__trash");
-
-  //handling the like event
-  elementsItem
-    .querySelector(".elements__like")
-    .addEventListener("click", () => {
-      elementsLikeButton.classList.toggle("elements__like_active");
-    });
-
-  //handling delete event
-  elementsDeleteButton.addEventListener("click", () => {
-    elementsItem.remove();
-  });
-
-  //handling image popup
-  elementsImage.addEventListener("click", () => {
-    image.src = input.link;
-    image.alt = `Picture of ${input.name}`;
-    imageCaption.textContent = input.name;
-    togglePopup(popupImage);
-  });
-
-  //information for the created element
-  elementsTitle.textContent = input.name;
-  elementsImage.style.backgroundImage = `url(${input.link})`;
-  elementsImage.alt = `Picture of ${input.name}`;
-
-  return elementsItem;
-}
-
-//Handling toggle active popups
+// //Handling toggle active popups
 function togglePopup(popup) {
   popup.classList.toggle("popup_active");
   if (popup.classList.contains("popup_active")) {
@@ -121,15 +97,15 @@ function addElementSubmit(event) {
   const newElementObject = {};
   newElementObject.name = imageNameInput.value;
   newElementObject.link = imageLinkInput.value;
-  const newElementItem = createCard(newElementObject);
-  elementsContainer.prepend(newElementItem);
+  const newElementItem = new Card(newElementObject, ".elements-template");
+  elementsContainer.prepend(newElementItem.generateCard());
   togglePopup(popupAdd);
 }
 
 //adding elements to html
 initialCards.forEach((input) => {
-  const elementsItem = createCard(input);
-  elementsContainer.prepend(elementsItem);
+  const card = new Card(input, ".elements-template");
+  elementsContainer.prepend(card.generateCard());
 });
 
 //close popup on escape
@@ -163,3 +139,14 @@ imageCloseButton.addEventListener("click", () => togglePopup(popupImage));
 //Submit forms
 formSaveProfile.addEventListener("submit", profileFormSubmit);
 formAddElement.addEventListener("submit", addElementSubmit);
+
+// new Classes
+const profileFormValidator = new FormValidator(
+  validationObject,
+  formSaveProfile
+);
+
+const addFormValidator = new FormValidator(validationObject, formAddElement);
+
+profileFormValidator.enableValidation();
+addFormValidator.enableValidation();
