@@ -11,9 +11,9 @@ class UserInfo {
     };
   }
 
-  setUserInfo(nameInput, jobInput) {
-    this._name.textContent = nameInput.value;
-    this._occupation.textContent = jobInput.value;
+  setUserInfo(name, occupation) {
+    this._name.textContent = name;
+    this._occupation.textContent = occupation;
   }
 }
 

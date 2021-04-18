@@ -23,16 +23,16 @@ import PopupWithImage from "../scripts/modules/PopupWithImage.js";
 import Section from "../scripts/modules/Section.js";
 import UserInfo from "../scripts/modules/UserInfo.js";
 
-//disable button
-function disableButton(popup) {
-  const button = popup.querySelector(".popup__button");
-  button.classList.add("popup__button_disabled");
-  button.disabled = true;
-}
-
 //HANDLE CARD CLICK
 function handCardClick(name, link) {
   popupImage.open(name, link);
+}
+
+//Create Cards
+function createCard(input) {
+  const card = new Card(input, ".elements-template", handCardClick);
+  const cardItem = card.generateCard();
+  return cardItem;
 }
 
 //LOADING ELEMENTS TO PAGE
@@ -40,8 +40,7 @@ const cards = new Section(
   {
     items: initialCards,
     renderer: (input) => {
-      const card = new Card(input, ".elements-template", handCardClick);
-      cards.addItem(card.generateCard());
+      cards.addItem(createCard(input));
     },
   },
   elementsContainer
@@ -67,38 +66,34 @@ const userInfo = new UserInfo({
 //EDIT PROFILE POPUP
 const profilePopup = new PopupWithForm({
   popupSelector: ".popup_type_edit",
-  submitHandler: () => {
-    userInfo.setUserInfo(nameInput, jobInput);
+  submitHandler: (inputValues) => {
+    userInfo.setUserInfo(inputValues.name, inputValues.description);
     profilePopup.close();
   },
 });
 profilePopup.setEventListeners();
 profileEditButton.addEventListener("click", () => {
-  const currentInput = userInfo.getUserInfo();
-  nameInput.value = currentInput.name;
-  jobInput.value = currentInput.occupation;
+  const inputValues = userInfo.getUserInfo();
+  nameInput.value = inputValues.name;
+  jobInput.value = inputValues.occupation;
   profilePopup.open();
 });
 
 //ADD POPUP
 const addElementPopup = new PopupWithForm({
   popupSelector: ".popup_type_add",
-  submitHandler: () => {
-    const newElementObject = {};
-    newElementObject.name = imageNameInput.value;
-    newElementObject.link = imageLinkInput.value;
-    const newElementItem = new Card(
-      newElementObject,
-      ".elements-template",
-      handCardClick
+  submitHandler: (inputValues) => {
+    cards.addItem(
+      createCard({
+        name: inputValues.title,
+        link: inputValues.image,
+      })
     );
-    cards.addItem(newElementItem.generateCard());
     addElementPopup.close();
   },
 });
 addElementPopup.setEventListeners();
 cardAddButton.addEventListener("click", () => {
-  disableButton(popupAdd);
   addElementPopup.open();
 });
 

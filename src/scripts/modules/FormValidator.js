@@ -46,6 +46,10 @@ class FormValidator {
     }
   }
 
+  _disableButton(button) {
+    button.classList.add(this._inactiveButtonClass);
+  }
+
   enableValidation() {
     this._form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -53,6 +57,13 @@ class FormValidator {
 
     const inputs = Array.from(this._form.querySelectorAll(this._inputSelector));
     const button = this._form.querySelector(this._submitButtonSelector);
+
+    this._form.addEventListener("reset", () => {
+      inputs.forEach((input) => {
+        this._hideInputError(input);
+      });
+      this._disableButton(button);
+    });
 
     this._buttonState(inputs, button);
     inputs.forEach((input) => {
