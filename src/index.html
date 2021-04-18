@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Around the US</title>
   </head>
   <body>
@@ -15,7 +14,7 @@
       <main class="content">
         <section class="profile">
           <img
-            src="./images/profile.png"
+            src="<%= require(./images/profile.png)%>"
             alt="image of Jacques Cousteau"
             class="profile__avatar"
           />
@@ -163,6 +162,5 @@
         </li>
       </template>
     </div>
-    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>

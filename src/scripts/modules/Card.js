@@ -1,17 +1,10 @@
-//Imports
-import { togglePopup, escapePopup, closeClick } from "./utils.js";
-
-//Variables
-const popupImage = document.querySelector(".popup_type_image");
-const image = document.querySelector(".popup__image");
-const imageCaption = document.querySelector(".popup__image-title");
-
 //Card class
 class Card {
-  constructor(data, elementSelector) {
+  constructor(data, elementSelector, handleCardClick) {
     this._link = data.link;
     this._name = data.name;
     this._elementSelector = elementSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getCardTemplate() {
@@ -20,19 +13,12 @@ class Card {
     return elementsTemplate;
   }
 
-  _handleLikeButton() {
+  _handleLikeButton(event) {
     event.target.classList.toggle("elements__like_active");
   }
 
   _handleDeleteButton() {
     this._card.remove();
-  }
-
-  _handleImagePopup() {
-    image.src = this._link;
-    image.alt = `Picture of ${this._name}`;
-    imageCaption.textContent = this._name;
-    togglePopup(popupImage);
   }
 
   _setEventListeners() {
@@ -42,7 +28,7 @@ class Card {
 
     //handling the like event
     elementsLikeButton.addEventListener("click", (event) =>
-      this._handleLikeButton()
+      this._handleLikeButton(event)
     );
 
     //handling delete event
@@ -51,7 +37,9 @@ class Card {
     );
 
     //handling image popup
-    elementsImage.addEventListener("click", () => this._handleImagePopup());
+    elementsImage.addEventListener("click", () =>
+      this._handleCardClick(this._name, this._link)
+    );
   }
 
   generateCard() {
