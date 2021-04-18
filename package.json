@@ -1,15 +1,23 @@
 {
   "name": "web_project_4",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://mhbae-dev.github.io/web_project_4/",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhbae-dev/web_project_4.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Myoung Bae",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhbae-dev/web_project_4/issues"
+  },
+  "homepage": "https://github.com/mhbae-dev/web_project_4#readme",
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
@@ -26,6 +34,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "core-js": "^3.10.0"
+    "core-js": "^3.10.1"
   }
 }

@@ -4,6 +4,7 @@ import {
   validationObject,
   initialCards,
   elementsContainer,
+  popupAdd,
   profileJob,
   profileName,
   profileEditButton,
@@ -21,6 +22,13 @@ import PopupWithForm from "../scripts/modules/PopupWithForm.js";
 import PopupWithImage from "../scripts/modules/PopupWithImage.js";
 import Section from "../scripts/modules/Section.js";
 import UserInfo from "../scripts/modules/UserInfo.js";
+
+//disable button
+function disableButton(popup) {
+  const button = popup.querySelector(".popup__button");
+  button.classList.add("popup__button_disabled");
+  button.disabled = true;
+}
 
 //HANDLE CARD CLICK
 function handCardClick(name, link) {
@@ -85,12 +93,14 @@ const addElementPopup = new PopupWithForm({
       handCardClick
     );
     cards.addItem(newElementItem.generateCard());
-    userInfo.setUserInfo(nameInput, jobInput);
     addElementPopup.close();
   },
 });
 addElementPopup.setEventListeners();
-cardAddButton.addEventListener("click", () => addElementPopup.open());
+cardAddButton.addEventListener("click", () => {
+  disableButton(popupAdd);
+  addElementPopup.open();
+});
 
 //IMAGE POPUP
 const popupImage = new PopupWithImage(".popup_type_image");
