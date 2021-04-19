@@ -4,7 +4,6 @@ import {
   validationObject,
   initialCards,
   elementsContainer,
-  popupAdd,
   profileJob,
   profileName,
   profileEditButton,
@@ -13,8 +12,6 @@ import {
   jobInput,
   formSaveProfile,
   formAddElement,
-  imageNameInput,
-  imageLinkInput,
 } from "../scripts/utils/constants.js";
 import FormValidator from "../scripts/modules/FormValidator.js";
 import Card from "../scripts/modules/Card.js";

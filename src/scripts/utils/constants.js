@@ -37,16 +37,11 @@ const initialCards = [
 ];
 
 //Variables
-//popup
-const popupAdd = document.querySelector(".popup_type_add");
-
 //card container
 const elementsContainer = document.querySelector(".elements__container");
 //inputs
 const profileName = document.querySelector(".profile__name");
 const profileJob = document.querySelector(".profile__profession");
-const imageNameInput = document.querySelector(".popup__input_type_title");
-const imageLinkInput = document.querySelector(".popup__input_type_image");
 const nameInput = document.querySelector(".popup__input_type_name");
 const jobInput = document.querySelector(".popup__input_type_job");
 
@@ -63,7 +58,6 @@ export {
   validationObject,
   initialCards,
   elementsContainer,
-  popupAdd,
   profileJob,
   profileName,
   profileEditButton,
@@ -72,6 +66,4 @@ export {
   jobInput,
   formSaveProfile,
   formAddElement,
-  imageNameInput,
-  imageLinkInput,
 };
