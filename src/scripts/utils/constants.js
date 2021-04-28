@@ -47,11 +47,13 @@ const jobInput = document.querySelector(".popup__input_type_job");
 
 //buttons
 const profileEditButton = document.querySelector(".profile__edit-btn");
+const avatarEditButton = document.querySelector(".profile__avatar");
 const cardAddButton = document.querySelector(".profile__add-btn");
 
 //forms
 const formSaveProfile = document.querySelector(".popup__form_type_profile");
 const formAddElement = document.querySelector(".popup__form_type_element");
+const formAvatar = document.querySelector(".popup__form_type_avatar");
 
 //Exports
 export {
@@ -61,9 +63,11 @@ export {
   profileJob,
   profileName,
   profileEditButton,
+  avatarEditButton,
   cardAddButton,
   nameInput,
   jobInput,
   formSaveProfile,
   formAddElement,
+  formAvatar,
 };

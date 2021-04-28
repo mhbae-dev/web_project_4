@@ -1,4 +1,5 @@
 .popup__button {
+  display: block;
   background: #000000;
   border: none;
   border-radius: 2px;

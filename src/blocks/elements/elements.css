@@ -4,17 +4,19 @@
 @import url(./__image/elements__image.css);
 @import url(./__info-container/elements__info-container.css);
 @import url(./__title/elements__title.css);
+@import url(./__like-container/elements__like-container.css);
+@import url(./__like-counter/elements__like-counter.css);
 @import url(./__like/elements__like.css);
 @import url(./__like/_active/elements__like_active.css);
 
-.elements{
-    max-width: 880px;
-    margin: 0 auto 67px;
+.elements {
+  max-width: 880px;
+  margin: 0 auto 67px;
 }
 
-@media screen and (max-width:945px){
-    .elements{
-        width: calc(100% - 38px);
-        margin: 0 auto 50px;
-    }
-}  
+@media screen and (max-width: 945px) {
+  .elements {
+    width: calc(100% - 38px);
+    margin: 0 auto 50px;
+  }
+}
