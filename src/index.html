@@ -13,11 +13,13 @@
 
       <main class="content">
         <section class="profile">
-          <img
-            src="<%= require('./images/profile.png')%>"
-            alt="image of Jacques Cousteau"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src=""
+              alt="image of Jacques Cousteau"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__info">
             <div class="profile__text-container">
               <h1 class="profile__name"></h1>
@@ -83,7 +85,12 @@
             />
             <span class="popup__error" id="profile-job-error"></span>
 
-            <button type="submit" class="popup__button button">Save</button>
+            <button
+              type="submit"
+              class="popup__button popup__button_type_edit button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -112,7 +119,12 @@
             />
             <span class="popup__error" id="avatar-url-error"></span>
 
-            <button type="submit" class="popup__button button">Save</button>
+            <button
+              type="submit"
+              class="popup__button popup__button_type_avatar button"
+            >
+              Save
+            </button>
           </form>
         </div>
       </div>
@@ -153,7 +165,12 @@
             />
             <span class="popup__error" id="card-url-error"></span>
 
-            <button type="submit" class="popup__button button">Create</button>
+            <button
+              type="submit"
+              class="popup__button popup__button_type_add button"
+            >
+              Create
+            </button>
           </form>
         </div>
       </div>
@@ -200,7 +217,7 @@
                 aria-label="heart button"
                 class="elements__like button"
               ></button>
-              <p class="elements__like-counter">2</p>
+              <p class="elements__like-counter">0</p>
             </div>
           </div>
         </li>

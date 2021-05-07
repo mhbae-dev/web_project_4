@@ -1,4 +1,4 @@
-//form validation object
+//FORM VALIDATION OBJECT
 const validationObject = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -8,7 +8,7 @@ const validationObject = {
   errorClass: "popup__error_visible",
 };
 
-//elements array
+//ELEMENTS ARRAY
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -36,35 +36,45 @@ const initialCards = [
   },
 ];
 
-//Variables
+//VARIABLES
 //card container
 const elementsContainer = document.querySelector(".elements__container");
+const avatarImg = document.querySelector(".profile__avatar");
 //inputs
 const profileName = document.querySelector(".profile__name");
 const profileJob = document.querySelector(".profile__profession");
 const nameInput = document.querySelector(".popup__input_type_name");
 const jobInput = document.querySelector(".popup__input_type_job");
 
-//buttons
+//Open buttons
 const profileEditButton = document.querySelector(".profile__edit-btn");
-const avatarEditButton = document.querySelector(".profile__avatar");
+const avatarEditButton = document.querySelector(".profile__avatar-container");
 const cardAddButton = document.querySelector(".profile__add-btn");
+
+//Save buttons
+const profileSaveButton = document.querySelector(".popup__button_type_edit");
+const cardSaveButton = document.querySelector(".popup__button_type_add");
+const avatarSaveButton = document.querySelector(".popup__button_type_avatar");
 
 //forms
 const formSaveProfile = document.querySelector(".popup__form_type_profile");
 const formAddElement = document.querySelector(".popup__form_type_element");
 const formAvatar = document.querySelector(".popup__form_type_avatar");
 
-//Exports
+//EXPORTS
 export {
   validationObject,
   initialCards,
   elementsContainer,
+  avatarImg,
   profileJob,
   profileName,
   profileEditButton,
   avatarEditButton,
   cardAddButton,
+  profileSaveButton,
+  cardSaveButton,
+  avatarSaveButton,
   nameInput,
   jobInput,
   formSaveProfile,
