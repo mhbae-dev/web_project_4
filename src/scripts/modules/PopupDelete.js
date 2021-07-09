@@ -7,12 +7,12 @@ class PopupDelete extends Popup {
   }
 
   handleDelete() {
-    this._card.remove();
+    this._cardItem.remove();
   }
 
-  open(cardData, cardItem) {
+  open(cardID, cardItem) {
     super.open();
-    this._data = cardData;
+    this._data = cardID;
     this._cardItem = cardItem;
   }
 
@@ -20,7 +20,6 @@ class PopupDelete extends Popup {
     super.setEventListeners();
     this._popupElement.addEventListener("submit", (event) => {
       event.preventDefault();
-      //Delete Card
       this._submitHandler(this._data);
       this.close();
     });

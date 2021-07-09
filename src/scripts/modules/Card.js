@@ -1,26 +1,41 @@
 //Card class
 class Card {
-  constructor(data, elementSelector, handleCardClick, handleDeleteButton) {
+  constructor(
+    data,
+    elementSelector,
+    handleCardClick,
+    handleDeleteButton,
+    handleCardLike
+  ) {
     this._link = data.link;
     this._name = data.name;
+    this._likeCounter = data.likes.length;
     this._id = data._id;
     this._elementSelector = elementSelector;
     this._handleCardClick = handleCardClick;
     this._handleDeleteButton = handleDeleteButton;
+    this._handleCardLike = handleCardLike;
   }
 
   id() {
     return this._id;
   }
+
+  _updateLikes(event, data) {
+    const likesCounter = this._card.querySelector("elements__like-counter");
+    likesCounter.textContent = data.likes.length;
+  }
+
   _getCardTemplate() {
-    const elementsTemplate = document.querySelector(this._elementSelector)
-      .content;
+    const elementsTemplate = document.querySelector(
+      this._elementSelector
+    ).content;
     return elementsTemplate;
   }
 
   _handleLikeButton(event) {
     event.target.classList.toggle("elements__like_active");
-    
+    this._updateLikes(event, data);
   }
 
   // _handleDeleteButton() {

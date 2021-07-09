@@ -87,10 +87,40 @@ api.getInitialCards().then((res) => {
       input,
       ".elements-template",
       handCardClick,
-      handleDeleteButton
+      handleDeleteButton,
+      handleCardLike
     );
-    const cardItem = card.generateCard(userInfo.id());
+    const cardItem = card.generateCard();
     return cardItem;
+  }
+
+  //HANDLE CARD DELETE
+  function handleDeleteButton(cardId, cardItem) {
+    popupDelete.open(cardId, cardItem);
+  }
+
+  // //HANDLE CARD LIKE
+  function handleCardLike(cardId, card) {
+    if (card.isLiked()) {
+      api
+        .addLikeStatus(cardId)
+        .then((res) => {
+          card.likes(res.likes);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      api
+        .removeLikeStatus(cardId)
+        .then((res) => {
+          card.likes(res.likes);
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+
+  //HANDLE CARD CLICK
+  function handCardClick(name, link) {
+    popupImage.open(name, link);
   }
 
   addElementPopup.setEventListeners();
@@ -98,16 +128,6 @@ api.getInitialCards().then((res) => {
     addElementPopup.open();
   });
 });
-
-//Delete Cards
-function handleDeleteButton(cardID) {
-  popupDelete.open();
-}
-
-//HANDLE CARD CLICK
-function handCardClick(name, link) {
-  popupImage.open(name, link);
-}
 
 //RECEIVE USER INFORMATION FROM SERVER
 api.getUserInfo().then((res) => {
@@ -146,7 +166,7 @@ const profilePopup = new PopupWithForm({
         avatar: inputValues.avatar,
       })
       .then((data) => {
-        userInfo.setUserInfo(data.name, data.description, data.avatar);
+        userInfo.setUserInfo(data.name, data.about, data.avatar);
         renderLoading(false, profileSaveButton);
       })
       .then(() => {
@@ -172,9 +192,9 @@ popupImage.setEventListeners();
 //TRASH POPUP
 const popupDelete = new PopupDelete({
   popupSelector: ".popup_type_delete",
-  submitHandler: (cardID) => {
+  submitHandler: (cardId) => {
     api
-      .removeCard(cardID)
+      .removeCard(cardId)
       .then(() => {
         popupDelete.handleDelete();
         popupDelete.close();
@@ -192,9 +212,9 @@ const avatarPopup = new PopupWithForm({
   submitHandler: (inputValues) => {
     renderLoading(true, avatarSaveButton);
     api
-      .setUserAvatar({ avatar: inputValues.avatar })
+      .setUserAvatar(inputValues.avatar)
       .then((data) => {
-        userInfo.setUserInfo(data.name, data.description, data.avatar);
+        userInfo.setUserInfo(data.name, data.about, data.avatar);
         renderLoading(false, avatarSaveButton);
       })
       .then(() => {
