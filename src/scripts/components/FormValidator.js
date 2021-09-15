@@ -10,7 +10,7 @@ class FormValidator {
   }
 
   _showInputError(input) {
-    const error = document.querySelector("#" + input.id + "-error");
+    const error = this._form.querySelector("#" + input.id + "-error");
     error.textContent = input.validationMessage;
 
     error.classList.add(this._errorClass);
@@ -18,7 +18,7 @@ class FormValidator {
   }
 
   _hideInputError(input) {
-    const error = document.querySelector("#" + input.id + "-error");
+    const error = this._form.querySelector("#" + input.id + "-error");
     error.textContent = "";
 
     error.classList.remove(this._errorClass);
@@ -41,13 +41,13 @@ class FormValidator {
       button.classList.remove(this._inactiveButtonClass);
       button.disabled = false;
     } else {
-      button.classList.add(this._inactiveButtonClass);
-      button.disabled = true;
+      this._disableButton(button);
     }
   }
 
   _disableButton(button) {
     button.classList.add(this._inactiveButtonClass);
+    button.disabled = true;
   }
 
   enableValidation() {

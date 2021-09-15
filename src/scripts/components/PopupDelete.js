@@ -22,7 +22,6 @@ class PopupDelete extends Popup {
     this._form.addEventListener("submit", (event) => {
       event.preventDefault();
       this._submitHandler(this._cardId, this._cardItem);
-      this.close();
     });
   }
 }

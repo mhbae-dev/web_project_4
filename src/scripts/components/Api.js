@@ -4,25 +4,21 @@ class Api {
     this._headers = headers;
   }
 
+  _checkResponse(res) {
+    return res.ok ? res.json() : Promise.reject("Error!" + res.statusText);
+  }
+
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   //GET https://around.nomoreparties.co/v1/groupId/users/me
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   getAppInfo() {
@@ -38,11 +34,7 @@ class Api {
         name,
         link,
       }),
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   //DELETE https://around.nomoreparties.co/v1/groupId/cards/cardId
@@ -50,11 +42,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/${cardID}`, {
       headers: this._headers,
       method: "DELETE",
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   //PUT https://around.nomoreparties.co/v1/groupId/cards/likes/cardId
@@ -63,11 +51,7 @@ class Api {
       headers: this._headers,
       method: "PUT",
       body: JSON.stringify(userData),
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   //DELETE https://around.nomoreparties.co/v1/groupId/cards/likes/cardId
@@ -75,11 +59,7 @@ class Api {
     return fetch(`${this._baseUrl}/cards/likes/${cardID}`, {
       headers: this._headers,
       method: "DELETE",
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   //PATCH https://around.nomoreparties.co/v1/groupId/users/me
@@ -91,11 +71,7 @@ class Api {
         name,
         about,
       }),
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 
   //PATCH https://around.nomoreparties.co/v1/groupId/users/me/avatar
@@ -106,11 +82,7 @@ class Api {
       body: JSON.stringify({
         avatar: avatar,
       }),
-    })
-      .then((res) =>
-        res.ok ? res.json() : Promise.reject("Error!" + res.statusText)
-      )
-      .catch((err) => console.log(err));
+    }).then((res) => this._checkResponse(res));
   }
 }
 

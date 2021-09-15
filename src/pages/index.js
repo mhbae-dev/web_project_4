@@ -19,16 +19,16 @@ import {
   formAddElement,
   formAvatar,
 } from "../scripts/utils/constants.js";
-import FormValidator from "../scripts/modules/FormValidator.js";
-import Card from "../scripts/modules/Card.js";
-import PopupWithForm from "../scripts/modules/PopupWithForm.js";
-import PopupWithImage from "../scripts/modules/PopupWithImage.js";
-import Section from "../scripts/modules/Section.js";
-import UserInfo from "../scripts/modules/UserInfo.js";
-import Api from "../scripts/modules/Api.js";
-import Popup from "../scripts/modules/Popup.js";
-import PopupDelete from "../scripts/modules/PopupDelete.js";
-import { renderLoading, renderDeleting } from "../scripts/utils/utils.js";
+import FormValidator from "../scripts/components/FormValidator.js";
+import Card from "../scripts/components/Card.js";
+import PopupWithForm from "../scripts/components/PopupWithForm.js";
+import PopupWithImage from "../scripts/components/PopupWithImage.js";
+import Section from "../scripts/components/Section.js";
+import UserInfo from "../scripts/components/UserInfo.js";
+import Api from "../scripts/components/Api.js";
+import Popup from "../scripts/components/Popup.js";
+import PopupDelete from "../scripts/components/PopupDelete.js";
+import { renderLoading } from "../scripts/utils/utils.js";
 
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-10",
@@ -107,18 +107,20 @@ api
     const addElementPopup = new PopupWithForm({
       popupSelector: ".popup_type_add",
       submitHandler: ({ title: name, image: link }) => {
-        renderLoading(true, cardSaveButton);
+        renderLoading(true, cardSaveButton, "Saving...");
         api
           .addCard({ name, link })
           .then((data) => {
             cards.addItem(createCard(data));
-            renderLoading(false, cardSaveButton);
           })
           .then(() => {
             addElementPopup.close();
           })
           .catch((err) => {
             console.log(err);
+          })
+          .finally(() => {
+            renderLoading(false, cardSaveButton, "Saved");
           });
       },
     });
@@ -155,7 +157,7 @@ avatarFormValidator.enableValidation();
 const profilePopup = new PopupWithForm({
   popupSelector: ".popup_type_edit",
   submitHandler: ({ name: name, description: about }) => {
-    renderLoading(true, profileSaveButton);
+    renderLoading(true, profileSaveButton, "Saving...");
     api
       .setProfileInfo({ name, about })
       .then((data) => {
@@ -165,13 +167,15 @@ const profilePopup = new PopupWithForm({
           avatar: data.avatar,
           _id: data._id,
         });
-        renderLoading(false, profileSaveButton);
       })
       .then(() => {
         profilePopup.close();
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        renderLoading(false, profileSaveButton, "Saved");
       });
   },
 });
@@ -191,16 +195,18 @@ popupImage.setEventListeners();
 const popupDelete = new PopupDelete({
   popupSelector: ".popup_type_delete",
   submitHandler: (cardId, cardElement) => {
-    renderDeleting(true, deleteConfirmButton);
+    renderLoading(true, deleteConfirmButton, "Deleting...");
     api
       .removeCard(cardId)
       .then(() => {
         popupDelete.handleDelete(cardElement);
-        renderDeleting(false, deleteConfirmButton);
         popupDelete.close();
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        renderLoading(false, deleteConfirmButton, "Deleted");
       });
   },
 });
@@ -210,7 +216,7 @@ popupDelete.setEventListeners();
 const avatarPopup = new PopupWithForm({
   popupSelector: ".popup_type_avatar",
   submitHandler: ({ avatar: avatar }) => {
-    renderLoading(true, avatarSaveButton);
+    renderLoading(true, avatarSaveButton, "Saving...");
     api
       .setUserAvatar({ avatar })
       .then((data) => {
@@ -220,13 +226,15 @@ const avatarPopup = new PopupWithForm({
           avatar: data.avatar,
           _id: data._id,
         });
-        renderLoading(false, avatarSaveButton);
       })
       .then(() => {
         avatarPopup.close();
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        renderLoading(false, avatarSaveButton, "Saved");
       });
   },
 });

@@ -1,19 +1,10 @@
 //SAVING... TEXT ON LOAD
-function renderLoading(isLoading, popupButton) {
+function renderLoading(isLoading, popupButton, buttonText) {
   if (isLoading) {
-    popupButton.textContent = "Saving...";
+    popupButton.textContent = buttonText;
   } else {
-    popupButton.textContent = "Saved";
+    popupButton.textContent = buttonText;
   }
 }
 
-//DELETING.. TEXT ON LOAD
-function renderDeleting(isLoading, popupButton) {
-  if (isLoading) {
-    popupButton.textContent = "Deleting...";
-  } else {
-    popupButton.textContent = "Deleted";
-  }
-}
-
-export { renderLoading, renderDeleting };
+export { renderLoading };
