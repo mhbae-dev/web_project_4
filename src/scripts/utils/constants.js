@@ -8,7 +8,7 @@ const validationObject = {
   errorClass: "popup__error_visible",
 };
 
-//ELEMENTS ARRAY
+/*//ELEMENTS ARRAY
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -34,7 +34,7 @@ const initialCards = [
     name: "Lago di Braies",
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
-];
+];*/
 
 //VARIABLES
 //card container
@@ -55,6 +55,9 @@ const cardAddButton = document.querySelector(".profile__add-btn");
 const profileSaveButton = document.querySelector(".popup__button_type_edit");
 const cardSaveButton = document.querySelector(".popup__button_type_add");
 const avatarSaveButton = document.querySelector(".popup__button_type_avatar");
+const deleteConfirmButton = document.querySelector(
+  ".popup__button_type_delete"
+);
 
 //forms
 const formSaveProfile = document.querySelector(".popup__form_type_profile");
@@ -64,7 +67,6 @@ const formAvatar = document.querySelector(".popup__form_type_avatar");
 //EXPORTS
 export {
   validationObject,
-  initialCards,
   elementsContainer,
   avatarImg,
   profileJob,
@@ -75,6 +77,7 @@ export {
   profileSaveButton,
   cardSaveButton,
   avatarSaveButton,
+  deleteConfirmButton,
   nameInput,
   jobInput,
   formSaveProfile,

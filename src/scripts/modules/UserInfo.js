@@ -10,13 +10,15 @@ class UserInfo {
       name: this._name.textContent,
       occupation: this._occupation.textContent,
       avatar: this._avatar.src,
+      _id: this._id,
     };
   }
 
-  setUserInfo(name, occupation, avatar) {
+  setUserInfo({ name, occupation, avatar, _id }) {
     this._name.textContent = name;
     this._occupation.textContent = occupation;
     this._avatar.src = avatar;
+    this._id = _id;
   }
 }
 

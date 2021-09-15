@@ -19,6 +19,7 @@
               alt="image of Jacques Cousteau"
               class="profile__avatar"
             />
+            <div class="profile__avatar-overlay"></div>
           </div>
           <div class="profile__info">
             <div class="profile__text-container">
@@ -196,8 +197,20 @@
             aria-label="form close button"
             class="popup__close-btn popup__close-btn_type_delete button"
           ></button>
-          <h3 class="popup__title">Are you sure?</h3>
-          <button type="submit" class="popup__button button">Yes</button>
+          <form
+            action="#"
+            method="POST"
+            name="delete"
+            class="popup__form popup__form_type_delete"
+          >
+            <h3 class="popup__title">Are you sure?</h3>
+            <button
+              type="submit"
+              class="popup__button popup__button_type_delete button"
+            >
+              Yes
+            </button>
+          </form>
         </div>
       </div>
 

@@ -6,21 +6,22 @@ class PopupDelete extends Popup {
     this._submitHandler = submitHandler;
   }
 
-  handleDelete() {
-    this._cardItem.remove();
+  handleDelete(cardElement) {
+    cardElement.remove();
   }
 
-  open(cardID, cardItem) {
+  open(cardId, cardItem) {
     super.open();
-    this._data = cardID;
+    this._cardId = cardId;
     this._cardItem = cardItem;
   }
 
   setEventListeners() {
     super.setEventListeners();
-    this._popupElement.addEventListener("submit", (event) => {
+    this._form = this._popupElement.querySelector(".popup__form");
+    this._form.addEventListener("submit", (event) => {
       event.preventDefault();
-      this._submitHandler(this._data);
+      this._submitHandler(this._cardId, this._cardItem);
       this.close();
     });
   }

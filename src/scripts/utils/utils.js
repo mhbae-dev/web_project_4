@@ -7,4 +7,13 @@ function renderLoading(isLoading, popupButton) {
   }
 }
 
-export { renderLoading };
+//DELETING.. TEXT ON LOAD
+function renderDeleting(isLoading, popupButton) {
+  if (isLoading) {
+    popupButton.textContent = "Deleting...";
+  } else {
+    popupButton.textContent = "Deleted";
+  }
+}
+
+export { renderLoading, renderDeleting };
