@@ -14,7 +14,7 @@ Visit this link to see the project live, [click here](https://mhbae-dev.github.i
 
 ## Demo
 
-![Desktop Demo]()
+![aroundtheus](https://user-images.githubusercontent.com/41869496/155084112-c056aa78-6ab2-4108-bd37-0bdc9630f673.gif)
 
 ## Instructions for use
 
